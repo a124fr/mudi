@@ -18,7 +18,7 @@ public class HomeController {
 	
 	@GetMapping("/home")
 	public String home(Model model) {						
-		List<Pedido> pedidos = this.pedidoRepository.recuperarTodosOsPedidos();
+		List<Pedido> pedidos = this.pedidoRepository.findAll();
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
