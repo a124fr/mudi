@@ -1,10 +1,10 @@
 <html>
 	<head th:replace="~{base :: head}"></head>
 	<body>
+		<div th:replace="~{base :: logo}"></div>
+		
 		<div class="container">
-			<div class="jumbotron mb-0">
-				<h1 class="display-4">Novo Pedidos</h1>
-			</div>
+			<div th:replace="~{base :: titulo('Novo Pedido')}"></div>
 			
 			<div class="card mt-3">
 			<form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST" >
@@ -18,7 +18,7 @@
 				<div class="form-group">
 					<label for="urlProduto">Url</label>
 					<input th:field="*{urlProduto}" th:errorclass="is-invalid" class="form-control" type="text" placeholder="url do produto" />
-					<smal>Procure um site ou produto que vocÍ deseja e cole a url da p·gina aqui.</smal>
+					<smal>Procure um site ou produto que voc√© deseja e cole a url da p√°gina aqui.</smal>
 					<div th:errors="*{urlProduto}" class="invalid-feedback"></div>
 				</div>
 				
